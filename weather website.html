@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+   <style>
+    *{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        box-sizing: border-box;
+    }
+    body{
+        background: #222;
+    }
+    .card{
+        
+  width: 80%;
+  max-width: 450px;
+  background: linear-gradient(135deg,#00feba,#5b548a);
+  color: #fff;
+  margin: 100px auto 0;
+  margin-top: 8px;
+  border-radius: 20px;
+  padding:40px 35px;
+  text-align: center;
+}
+.search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+.search input{
+    background: #ebfffc;
+    color: #555;
+    padding: 10px 25px;
+    height: 50px;
+    border-radius:30px;
+    flex: 1px;
+    margin-right: 16px;
+    font-size: 18px;
+}
+.search button{
+    background: #ebfffc;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer; 
+}
+.search button img{
+width:16px;
+
+
+}
+.weather-icon{
+    width: 170px;
+    margin-top: 40px;
+     
+}
+.weather h1{
+    font-size: 80px;
+    font-weight: 500;
+    margin-top: 4px;
+
+}
+.weather h2{
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -35px;   
+}
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+
+}
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+.col img{
+    width: 40px;
+    margin-right: 10px;
+    
+}
+.humidity, .wind{
+    font-size: 28px;
+}
+
+</style>
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+         <input type="text" placeholder="enter city name"
+         spellcheck="false">
+         <button><img src="images/search.png"></button> 
+         
+         </div>
+         <div class="weather">
+            <img src="images/images.png" class="weather-icon">
+            <h1 class="temp">22°c</h1>
+            <h2 class="city">New York</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="images/download.png">
+                    <div>
+               <p class="humidity">50%</p>
+                <p>humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/icons8-wind-48.png";>
+                         <div>
+                    <p class="wind">15km/h</p>
+                     <p>wind</p>
+                     
+                         </div>
+                     </div>
+            </div>
+    </div>
+
+    </div>
+    <script>
+        const apiKey = "395db1334331101c1483562eec7dc5a2";
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+        
+        const searchBox = document.querySelector(".search input");
+        const searchBtn = document.querySelector(".search button");
+        const weatherIcon = document.querySelector(".weather-icon");
+
+        async function checkWeather(city){
+    const response = await fetch(apiUrl  +  city + `&appid=${apiKey}`);
+    var data = await response.json(); 
+
+    console.log(data);
+document.querySelector(".city").innerHTML = data.name;
+document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
+document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
+
+     if(data.weather[0].main == "Cloud"){
+        weatherIcon.src ="images/clouds.png";
+     }
+     else if(data.weather[0].main == "Clear"){
+        weatherIcon.src = "images/sun.png";
+     }
+     else if(data.weather[0].main == "Rain"){
+        weatherIcon.src = "images/images.png";
+     }
+     else if(data.weather[0].main == "Drizzle"){
+        weatherIcon.src = "images/drizzle.png";
+     }
+     else if(data.weather[0].main == "Mist"){
+        weatherIcon.src = "images/mist.png";
+     } 
+
+}
+
+searchBtn.addEventListener("click", ()=>{
+    checkWeather(searchBox.value);
+})
+
+    </script>
+ 
+</body>
+</html>
