@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+   *{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+   }
+   body{
+    line-height: 1.6; 
+   }
+
+   h1{
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin: 40px 0 60px 0; 
+   }
+   form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+   }
+   #search-input{
+    width: 60%;
+    max-width:400px;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size:18px;
+    color: #333;
+}
+#search-button{
+padding: 10px 20px;
+background-color: #138065;
+color: #fff;
+border: none;
+font-size: 18px;
+box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+cursor: pointer;
+border-radius: 5px;
+margin-left: 10px;
+}
+.search-results{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+.search-result{
+    margin-bottom: 60px;
+    width: 390px;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+.search-result img {
+width: 350px;
+height: 300px;
+object-fit: cover;
+transition: opacity 0.2s ease-in-out;
+}
+.search-result:hover img{
+ opacity:0.8;   
+}
+.search-result a{
+    color: #333;
+    display: block;
+    text-transform: capitalize;
+
+}
+#show{
+    background-color: #008cba;
+    font-size: 18px;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    display: block;
+    margin: 38px auto;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+@media screen and (max-width: 768px){
+    .search-results{
+        padding: 20px;
+    }
+    .search-result{
+        width: 45%;
+        
+    }
+}   
+
+@media screen and (max-width: 480px){
+    .search-result{
+        width: 100%;
+
+    }
+}   
+
+
+   
+   
+   </style>
+</head>
+<body>
+ 
+    <h1>Image Search App</h1>
+    <form action="">
+        <input type="text" id="search-input" placeholder="search for images">
+        <button id="search-button">Search</button>
+    
+    </form>
+
+    <div class="search-results">
+        <div class="search-result">
+            <img src="https://images.unsplash.com/photo-1682687219612-b12805df750d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="brown wooden dock on body of water during sunset">
+            <a href="https://unsplash.com/photos/a-hand-reaching-up-into-a-palm-tree-lh1uDwaUPPM" target="_blank">A hand reaching up into a palm tree</a>
+        
+        </div>
+        <div class="search-result">
+            <img src="https://images.unsplash.com/photo-1682687219612-b12805df750d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="brown wooden dock on body of water during sunset">
+            <a href="https://unsplash.com/photos/a-hand-reaching-up-into-a-palm-tree-lh1uDwaUPP" target="_blank">A hand reaching up into a palm tree</a>
+        
+        </div>
+        <div class="search-result">
+            <img src="https://images.unsplash.com/photo-1682687219612-b12805df750d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="brown wooden dock on body of water during sunset">
+            <a href="https://unsplash.com/photos/a-hand-reaching-up-into-a-palm-tree-lh1uDwaUPP" target="_blank">A hand reaching up into a palm tree</a>
+        
+        </div>
+    </div>
+  
+       <button id="show">Show more</button>
+         
+    <script src="image new images.js"></script>
+
+</body>
+</html>
