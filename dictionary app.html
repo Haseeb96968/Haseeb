@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+     background: color #f5f5f5;
+     width: 100vw;
+
+}
+header{
+    background-color:#008080;
+    padding: 20px;
+    color: #fff;
+}
+h1{
+    font-size: 36px;
+
+}
+main{
+   min-height: 80vh;
+   padding: 20px;
+   max-width: 800px;
+   margin: 0 auto;
+
+}
+main form{
+    display: flex;
+    justify-content: center;
+
+}
+input {
+    flex-grow: 1;
+    padding: 10px;
+
+}
+button{
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #008080;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+}
+footer{
+    background-color: #008080;
+    color: #f5f5f5;
+    margin-top:10px;    
+    padding: 5px;
+    text-align: center;
+    font-size: 18px;
+    position: fixed;
+    width: 100%;
+}
+.result{
+    background-color:white;
+    margin-top: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+}
+.result p{
+    margin-top: 10px;
+}
+.result p[class="part"]{
+    font-style: italic;
+    color: #808080;
+    margin-top: 2px;
+
+}
+.result div{
+    margin-top: 15px;
+
+}
+.result div a{
+    text-decoration: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #008080;
+    color: white;
+    cursor: pointer;
+    margin-top: 12px;
+}
+.result li{
+    padding: 5px;
+    margin-left: 20px;
+}
+
+
+
+</style>
+<body>
+    <header>
+        <nav>
+            <h1>Dictionary App</h1>
+        </nav>
+    </header>
+    <main>
+        <form action="">
+             <input type="text" placeholder="Enter a word">
+            <button type="submit">Search</button>
+        </form>
+        <div class="result"></div>
+    </main>
+    <footer>
+        <p>&copy; Code Traversal 2023-2024</p>
+    </footer>
+    <script src="dictionary .js"></script>
+</body>
+</html>
